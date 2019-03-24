@@ -15,15 +15,15 @@ const _async = require('async-express');
 const app = express();
 
 // As a route
-app.get('/', _async((req, res, next) => {
+app.get('/', _async(async (req, res, next) => {
   // Wait 5 seconds
   await new Promise(r => setTimeout(r, 5000));
   // Send a response
-  req.send('Waited 5 seconds successfully');
+  res.send('Waited 5 seconds successfully');
 }));
 ```
 
-The sample above can be refactored using decorator syntax as the following
+The sample above can be refactored as the following
 
 ```js
 const express = require('express');
@@ -33,11 +33,10 @@ const app = express();
 
 app.get('/', waitForABit);
 
-@_async
-function waitForABit(req, res, next) {
+const waitForABit = _async(async (req, res, next) => {
   // Wait 5 seconds
   await new Promise(r => setTimeout(r, 5000));
   // Send a response
-  req.send('Waited 5 seconds successfully');
-}
+  res.send('Waited 5 seconds successfully');
+});
 ```
