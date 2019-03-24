@@ -31,12 +31,12 @@ const _async = require('async-express');
 
 const app = express();
 
-app.get('/', waitForABit);
-
 const waitForABit = _async(async (req, res, next) => {
   // Wait 5 seconds
   await new Promise(r => setTimeout(r, 5000));
   // Send a response
   res.send('Waited 5 seconds successfully');
 });
+
+app.get('/', waitForABit);
 ```
