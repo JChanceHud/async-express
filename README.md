@@ -17,7 +17,7 @@ const app = express();
 // As a route
 app.get('/', _async((req, res, next) => {
   // Wait 5 seconds
-  await new Promise(r => setTimeout(5000, r));
+  await new Promise(r => setTimeout(r, 5000));
   // Send a response
   req.send('Waited 5 seconds successfully');
 }));
@@ -36,7 +36,7 @@ app.get('/', waitForABit);
 @_async
 function waitForABit(req, res, next) {
   // Wait 5 seconds
-  await new Promise(r => setTimeout(5000, r));
+  await new Promise(r => setTimeout(r, 5000));
   // Send a response
   req.send('Waited 5 seconds successfully');
 }
