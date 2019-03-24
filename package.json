@@ -1,6 +1,6 @@
 {
   "name": "async-express",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Allow async/await syntax in Express routes and middleware",
   "main": "index.js",
   "scripts": {
