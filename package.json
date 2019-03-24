@@ -1,0 +1,18 @@
+{
+  "name": "async-express",
+  "version": "0.0.1",
+  "description": "Allow async/await syntax in Express routes and middleware",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "async",
+    "await",
+    "middleware",
+    "route"
+  ],
+  "author": "Chance Hudson",
+  "license": "MIT"
+}
