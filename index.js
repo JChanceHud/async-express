@@ -1,3 +1,3 @@
 module.exports = (handler) => {
-  return (req, res, next) => Promise.resolve(handler(req, res, next)).catch(next);
+  return (...args) => Promise.resolve(handler(...args)).catch((err) => args.pop()(err));
 };
