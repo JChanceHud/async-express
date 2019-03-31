@@ -5,11 +5,11 @@ module.exports = (handler) => {
     const _next = (..._args) => {
       if (nextCalled) return;
       nextCalled = true;
-      next(_args);
+      next(..._args);
     };
     args.push(_next);
     return Promise.resolve(handler(...args))
       .then(() => next())
-      .catch(_next)
+      .catch(_next);
   }
 };
