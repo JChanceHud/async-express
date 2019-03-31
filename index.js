@@ -9,7 +9,7 @@ module.exports = (handler) => {
     };
     args.push(_next);
     return Promise.resolve(handler(...args))
-      .then(() => next())
+      .then(() => _next())
       .catch(_next);
   }
 };
