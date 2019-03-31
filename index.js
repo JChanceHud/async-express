@@ -2,10 +2,10 @@ module.exports = (handler) => {
   return (...args) => {
     let nextCalled = false;
     const next = args.pop();
-    const _next = () => {
+    const _next = (..._args) => {
       if (nextCalled) return;
       nextCalled = true;
-      next();
+      next(_args);
     };
     args.push(_next);
     return Promise.resolve(handler(...args))
