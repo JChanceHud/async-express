@@ -10,12 +10,12 @@ In a route
 
 ```js
 const express = require('express');
-const _async = require('async-express');
+const asyncExpress = require('async-express');
 
 const app = express();
 
 // As a route
-app.get('/', _async(async (req, res, next) => {
+app.get('/', asyncExpress(async (req, res, next) => {
   // Wait 5 seconds
   await new Promise(r => setTimeout(r, 5000));
   // Send a response
@@ -27,11 +27,11 @@ The sample above can be refactored as the following
 
 ```js
 const express = require('express');
-const _async = require('async-express');
+const asyncExpress = require('async-express');
 
 const app = express();
 
-const waitForABit = _async(async (req, res, next) => {
+const waitForABit = asyncExpress(async (req, res, next) => {
   // Wait 5 seconds
   await new Promise(r => setTimeout(r, 5000));
   // Send a response
