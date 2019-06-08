@@ -1,8 +1,7 @@
-import { Express } from 'express'
+import * as express from 'express'
 
-type NextFunction = (err?: any) => void | any
 declare function asyncExpress<T>(
-  fn: (req: Express.Request, res: Express.Response, next: NextFunction) => Promise<T>
-): (req: Express.Request, res: Express.Response, next: NextFunction) => Promise<T>
+  fn: (req: express.Request, res: express.Response, next: express.NextFunction) => Promise<T>
+): (req: express.Request, res: express.Response, next: express.NextFunction) => Promise<T>
 
 export = asyncExpress
