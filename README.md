@@ -2,6 +2,10 @@
 
 Simple middleware wrapper to make Express handlers async compatible.
 
+## This package is likely unnecessary
+
+You can pass an async function as an express route handler without a problem, just make sure to use `res` and `next` appropriately.
+
 ## Usage
 
 `npm install --save async-express`
